@@ -2,9 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Home, Users, FileText, BarChart2, AlertTriangle } from 'lucide-react';
 
-export default function SidebarAdmin({ rutaActual }) {
+export default function SidebarAdmin() {
+  const pathname = usePathname();
+
   const menuItems = [
     { id: 'inicio', label: 'Inicio', href: '/admin', icon: Home },
     { id: 'usuarios', label: 'Usuarios', href: '/admin/usuarios', icon: Users },
@@ -30,13 +33,13 @@ export default function SidebarAdmin({ rutaActual }) {
     }}>
       <nav style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
         <header style={{ textAlign: 'center', marginBottom: '28px', display: 'flex', justifyContent: 'center' }}>
-          <span style={{ fontWeight: '800', fontSize: '18px', color: '#2e4a19' }}>Coffee+Vision</span>
+          <img src="/imagenes/logo2.png" alt="Coffee+Vision" style={{ width: '120px', objectFit: 'contain', display: 'block' }} />
         </header>
 
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
           {menuItems.map((item) => {
             const IconComponent = item.icon;
-            const activo = rutaActual === item.id;
+            const activo = pathname === item.href;
             return (
               <li key={item.id} style={{ width: '100%', display: 'flex' }}>
                 <Link
@@ -64,7 +67,7 @@ export default function SidebarAdmin({ rutaActual }) {
         </ul>
       </nav>
 
-      {/* TARJETA INFERIOR DE ALERTA CRÍTICA */}
+      {/* ALERTA CRÍTICA INFERIOR */}
       <footer style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
         <article style={{
           backgroundColor: '#53382c',

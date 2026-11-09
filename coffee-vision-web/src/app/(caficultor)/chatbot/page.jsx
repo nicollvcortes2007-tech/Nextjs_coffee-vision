@@ -1,3 +1,5 @@
+import { ChatBot } from "@/features/chatbot";
+
 export default function Page() {
-  return <h1>Chatbot de IA</h1>;
+  return <ChatBot />;
 }

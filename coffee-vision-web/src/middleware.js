@@ -14,8 +14,8 @@ export function middleware(req) {
   if (ruta.startsWith("/empleado") && rol !== "empleado")
     return NextResponse.redirect(new URL("/login", req.url));
 
-  const rutasCaficultor = ["/dashboard", "/cultivos", "/chatbot", "/notificaciones",
-    "/recomendaciones", "/reportes", "/contenidos", "/empleados", "/perfil"];
+  const rutasCaficultor = ["/dashboard", "/cultivos", "/actividades", "/chatbot", "/notificaciones",
+    "/recomendaciones", "/reportes", "/contenidos", "/empleados", "/perfil", "/configuracion"];
   if (rutasCaficultor.some((r) => ruta.startsWith(r)) && rol !== "caficultor")
     return NextResponse.redirect(new URL("/login", req.url));
 
@@ -23,8 +23,8 @@ export function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/cultivos/:path*", "/chatbot/:path*",
+  matcher: ["/dashboard/:path*", "/cultivos/:path*", "/actividades/:path*", "/chatbot/:path*",
     "/notificaciones/:path*", "/recomendaciones/:path*", "/reportes/:path*",
-    "/contenidos/:path*", "/empleados/:path*", "/perfil/:path*",
+    "/contenidos/:path*", "/empleados/:path*", "/perfil/:path*", "/configuracion/:path*",
     "/empleado/:path*", "/admin/:path*"],
 };

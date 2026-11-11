@@ -11,5 +11,5 @@ const permisos = {
 };
 
 export function puede(rol, permiso) {
-  return permisos[rol].includes(permiso);
+  return permisos[rol]?.includes(permiso) ?? false;
 }

@@ -1,10 +1,12 @@
-import SidebarAdmin from "@/components/layout/SidebarAdmin";
+import SidebarPrincipal from "@/components/layout/SidebarPrincipal";
+import FloatingChatButton from "@/components/dashboard/FloatingChatButton";
 
 export default function Layout({ children }) {
   return (
-    <div className="flex min-h-screen">
-      <SidebarAdmin />
-      <main className="flex-1 p-6">{children}</main>
+    <div className="flex min-h-screen max-md:flex-col">
+      <SidebarPrincipal role="administrador" />
+      <main className="grid min-w-0 flex-1 content-start gap-6 p-6 sm:p-8">{children}</main>
+      <FloatingChatButton />
     </div>
   );
 }

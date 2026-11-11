@@ -69,7 +69,7 @@ export default function RegistroPage() {
   }
 
   return (
-    <AuthLayout title="Crear Cuenta" subtitle="Completa tus datos para comenzar con CoffeeTech" backgroundImage="/coffee-tech/registro-fondo.webp">
+    <AuthLayout title="Crear Cuenta" subtitle="Completa tus datos para comenzar con Coffee+Visión" backgroundImage="/coffee-tech/registro-fondo.webp">
       <form onSubmit={submit} className="grid gap-4">
         <label className={labelClass}>
           Nombre Completo

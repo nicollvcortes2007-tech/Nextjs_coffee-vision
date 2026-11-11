@@ -4,7 +4,7 @@ import { useState } from "react";
 import Topbar from "@/components/dashboard/Topbar";
 
 const tabs = ["Información básica", "Aprobación de registros", "Gestión de cuentas", "Buenas prácticas", "Biblioteca de recursos"];
-const accountFields = [["Nombre", "José Caesar"], ["Apellido", "Martinez Gutierrez"], ["Ciudad", "Popayán"], ["Documento", "CC. ••••••••"], ["Teléfono", "•••• •••• ••"], ["Estado", "Activo"], ["Correo", "usuario@coffeetech.com"], ["Contraseña", "•••••••••"]];
+const accountFields = [["Nombre", "José Caesar"], ["Apellido", "Martinez Gutierrez"], ["Ciudad", "Popayán"], ["Documento", "CC. ••••••••"], ["Teléfono", "•••• •••• ••"], ["Estado", "Activo"], ["Correo", "usuario@coffeevision.com"], ["Contraseña", "•••••••••"]];
 
 export default function ConfiguracionCaficultorPage() {
   const [tab, setTab] = useState(tabs[0]);

@@ -32,7 +32,7 @@ export default function Home() {
           <img src={logo} alt="Coffee+visión Logo" className="h-16 w-auto object-contain sm:h-20" />
         </a>
 
-        <nav className={`${menuMovilAbierto ? "block" : "hidden"} order-3 w-full md:order-none md:block md:w-auto`}>
+        <nav className={`${menuMovilAbierto ? "block" : "hidden"} order-3 w-full md:order-0 md:block md:w-auto`}>
           <ul className="flex flex-col gap-1 py-2 font-semibold text-ink md:flex-row md:gap-8 md:py-0">
             <li><a href="#inicio" className="transition-colors hover:text-green">Inicio</a></li>
             <li><a href="#servicios" className="transition-colors hover:text-green">Servicios</a></li>

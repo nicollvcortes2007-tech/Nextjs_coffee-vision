@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Coffee+Visión | CoffeeTech",
+  title: "Coffee+Visión",
   description: "Plataforma de apoyo para caficultores del Cauca",
 };
 

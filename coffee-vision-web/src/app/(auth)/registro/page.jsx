@@ -16,7 +16,7 @@ const initialForm = {
   confirmPassword: "",
 };
 
-const inputClass = "min-h-[46px] rounded-lg border border-line px-3 font-normal text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/20";
+const inputClass = "min-h-11.5 rounded-lg border border-line px-3 font-normal text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/20";
 const labelClass = "grid gap-1.5 text-sm font-semibold text-coffee";
 
 export default function RegistroPage() {
@@ -87,7 +87,7 @@ export default function RegistroPage() {
         </label>
 
         <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-line bg-[#fbfaf7] p-3 text-sm font-semibold text-coffee">
-          <input type="checkbox" checked={isEmployee} onChange={(event) => setIsEmployee(event.target.checked)} className="h-4 w-4 accent-[#769f1a]" />
+          <input type="checkbox" checked={isEmployee} onChange={(event) => setIsEmployee(event.target.checked)} className="h-4 w-4 accent-green" />
           ¿Eres empleado? Regístrate con el código de tu finca.
         </label>
 
@@ -130,7 +130,7 @@ export default function RegistroPage() {
           Acepto los términos y condiciones y la política de privacidad
         </label>
 
-        <button type="submit" disabled={loading} className="mt-1 min-h-[46px] rounded-lg bg-green font-bold text-white transition-colors hover:bg-green-deep disabled:opacity-60">
+        <button type="submit" disabled={loading} className="mt-1 min-h-11.5 rounded-lg bg-green font-bold text-white transition-colors hover:bg-green-deep disabled:opacity-60">
           {loading ? "Creando cuenta…" : "Crear Cuenta"}
         </button>
 

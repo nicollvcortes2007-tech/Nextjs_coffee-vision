@@ -74,7 +74,7 @@ export default function LoginPage() {
     <AuthLayout
       title="Bienvenido de nuevo"
       subtitle="Ingresa tus credenciales para acceder a tu finca digital"
-      backgroundImage="/coffee-tech/login-fondo.webp"
+      backgroundImage="/coffee-tech/cosecha.webp"
     >
       <form onSubmit={submit} className="grid gap-4">
         <label className="grid gap-1.5 text-sm font-semibold text-coffee">
@@ -86,7 +86,7 @@ export default function LoginPage() {
             placeholder="ejemplo@correo.com"
             value={form.email}
             onChange={(event) => updateField("email", event.target.value)}
-            className="min-h-[46px] rounded-lg border border-line px-3 font-normal text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/20"
+            className="min-h-11.5 rounded-lg border border-line px-3 font-normal text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/20"
           />
         </label>
 
@@ -99,7 +99,7 @@ export default function LoginPage() {
             placeholder="••••••••"
             value={form.password}
             onChange={(event) => updateField("password", event.target.value)}
-            className="min-h-[46px] rounded-lg border border-line px-3 font-normal text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/20"
+            className="min-h-11.5 rounded-lg border border-line px-3 font-normal text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/20"
           />
         </label>
 
@@ -120,7 +120,7 @@ export default function LoginPage() {
         <button
           type="submit"
           disabled={loading}
-          className="mt-1 min-h-[46px] rounded-lg bg-green font-bold text-white hover:bg-green-deep disabled:opacity-60"
+          className="mt-1 min-h-11.5 rounded-lg bg-green font-bold text-white hover:bg-green-deep disabled:opacity-60"
         >
           {loading ? "Ingresando…" : "Iniciar sesión"}
         </button>

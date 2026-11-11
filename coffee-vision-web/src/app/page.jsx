@@ -43,7 +43,7 @@ export default function Home() {
 
         <aside className="flex items-center gap-4">
           <Link href="/login" className="font-semibold text-white transition-colors hover:text-green">Iniciar Sesión</Link>
-          <Link href="/registro" className="rounded-xl bg-green px-5 py-2.5 font-bold text-white shadow-sm transition-colors hover:bg-green-deep">
+          <Link href="/registro" className="rounded-xl bg-green px-5 py-2.5 font-bold text-white shadow-sm transition-colors hover:bg-[#648817]">
             Registro
           </Link>
         </aside>
@@ -175,7 +175,7 @@ export default function Home() {
               <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
                 ¿Tienes preguntas sobre Coffee+Visión o quieres conocer cómo puede ayudarte nuestra plataforma? Escríbenos y conversemos.
               </p>
-              <a href="mailto:Coffee+Visión@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-green px-6 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-green-deep">
+              <a href="mailto:Coffee+Visión@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-green px-6 py-3.5 font-bold text-white shadow-md transition-colors hover:bg-[#648817]">
                 <i className="fa-solid fa-envelope" aria-hidden="true"></i>
                 Contáctanos
               </a>

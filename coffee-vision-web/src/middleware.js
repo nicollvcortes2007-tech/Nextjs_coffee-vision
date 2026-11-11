@@ -11,7 +11,7 @@ export function middleware(req) {
   if (ruta.startsWith("/admin") && rol !== "administrador")
     return NextResponse.redirect(new URL("/login", req.url));
 
-  if (ruta.startsWith("/empleado") && rol !== "empleado")
+  if ((ruta === "/empleado" || ruta.startsWith("/empleado/")) && rol !== "empleado")
     return NextResponse.redirect(new URL("/login", req.url));
 
   const rutasCaficultor = ["/dashboard", "/cultivos", "/actividades", "/chatbot", "/notificaciones",

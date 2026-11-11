@@ -44,7 +44,10 @@ const demoSeeds = {
     { id: 2, titulo: "Revisar humedad del suelo", lote: "El Mirador", prioridad: "Media", fecha: "2026-11-11" },
   ],
   "/empleados": [
-    { id: 1, nombre: "Juan Pérez", email: "empleado@finca.co", estado: "Activo", fecha_vinculacion: "2026-08-12" },
+    { id: 1, nombre: "Juan Pérez", email: "juan.perez@finca.demo", estado: "Activo", fecha_vinculacion: "2026-08-12" },
+    { id: 2, nombre: "María Fernanda López", email: "maria.lopez@finca.demo", estado: "Activo", fecha_vinculacion: "2026-09-03" },
+    { id: 3, nombre: "Carlos Andrés Muñoz", email: "carlos.munoz@finca.demo", estado: "Activo", fecha_vinculacion: "2026-10-01" },
+    { id: 4, nombre: "Diana Marcela Rosero", email: "diana.rosero@finca.demo", estado: "Activo", fecha_vinculacion: "2026-10-15" },
   ],
   "/admin/usuarios": [
     { id: 1, nombre: "María Gómez", email: "caficultor@finca.co", rol: "caficultor", estado: "Activo", creado_en: "2026-07-12" },

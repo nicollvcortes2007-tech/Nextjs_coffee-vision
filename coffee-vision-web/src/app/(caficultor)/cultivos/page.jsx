@@ -1,3 +1,5 @@
+import { GestionCultivo } from "@/features/cultivos";
+
 export default function Page() {
-  return <h1>Mis cultivos</h1>;
+  return <GestionCultivo />;
 }

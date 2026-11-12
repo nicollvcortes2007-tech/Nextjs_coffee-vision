@@ -18,7 +18,11 @@ const navigation = {
   ],
   administrador: [
     ["/admin", "fa-solid fa-chart-pie", "Resumen"],
+    ["/admin/usuarios", "fa-solid fa-users", "Usuarios"],
+    ["/admin/empleados", "fa-solid fa-user-tie", "Empleados"],
     ["/admin/plagas-ia", "fa-solid fa-bug", "Plagas e IA"],
+    ["/admin/contenidos", "fa-solid fa-book-open", "Contenidos"],
+    ["/admin/metricas", "fa-solid fa-chart-column", "Métricas"],
     ["/admin/notificaciones", "fa-solid fa-bell", "Notificaciones"],
     ["/admin/perfil", "fa-solid fa-user", "Mi perfil"],
   ],
@@ -47,19 +51,19 @@ export default function SidebarPrincipal({ role = "caficultor" }) {
   }
 
   return (
-    <aside className="sticky top-0 flex h-screen w-[280px] flex-none flex-col gap-6 overflow-y-auto border-r border-line bg-white/95 p-5 backdrop-blur-md max-lg:w-[245px] max-md:static max-md:h-auto max-md:w-full max-md:gap-3 max-md:border-b max-md:border-r-0 max-md:p-4">
+    <aside className="sticky top-0 flex h-screen w-[260px] flex-none flex-col gap-4 overflow-y-auto border-r border-line bg-white/95 p-4 backdrop-blur-md max-lg:w-[230px] max-md:static max-md:h-auto max-md:w-full max-md:gap-3 max-md:border-b max-md:border-r-0 max-md:p-4">
       <Link href={home} className="flex items-center justify-center">
-        <img src="/coffee-tech/logo2.png" alt="Coffee+Visión" className="h-[112px] w-auto object-contain max-md:h-[72px]" />
+        <img src="/coffee-tech/logo2.png" alt="Coffee+Visión" className="h-[92px] w-auto object-contain max-md:h-[64px]" />
       </Link>
 
-      <nav className="grid gap-2 max-md:flex max-md:overflow-x-auto" aria-label={`Menú ${role}`}>
+      <nav className="grid gap-1.5 max-md:flex max-md:overflow-x-auto" aria-label={`Menú ${role}`}>
         {items.map(([href, icon, label]) => {
           const active = pathname === href || (href !== home && pathname.startsWith(`${href}/`));
           return (
             <Link
               key={href}
               href={href}
-              className={`flex min-h-[44px] items-center gap-2.5 rounded-lg px-3 py-2 font-bold transition-colors max-md:flex-none max-md:whitespace-nowrap ${active ? "bg-green-soft text-coffee" : "text-muted hover:bg-green-soft hover:text-coffee"}`}
+              className={`flex min-h-[40px] items-center gap-2.5 rounded-lg px-3 py-1.5 font-bold transition-colors max-md:flex-none max-md:whitespace-nowrap ${active ? "bg-green-soft text-coffee" : "text-muted hover:bg-green-soft hover:text-coffee"}`}
             >
               <i className={`${icon} w-4 text-center`} aria-hidden="true" />
               {label}

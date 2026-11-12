@@ -42,9 +42,9 @@ export default function EstadisticasEmpleadoPage() {
   }), [rows]);
   const recent = [...rows].sort((a, b) => (asDate(b.fecha)?.getTime() ?? 0) - (asDate(a.fecha)?.getTime() ?? 0)).slice(0, 8);
 
-  return <section className="grid gap-6">
-    <Topbar eyebrow="Mi seguimiento" title="Estadísticas de mis labores" notifTo="/empleado/notificaciones" profileTo="/empleado/perfil" avatar="/coffee-tech/image.png" name="Empleado" role="Equipo de finca"/>
-    <header className="flex flex-wrap items-center justify-between gap-4"><p className="max-w-2xl text-muted">Consulta el trabajo que has registrado en tus lotes asignados y revisa cómo avanza tu jornada.</p><label className="period-select">Periodo<select value={period} onChange={(event) => setPeriod(event.target.value)}><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="90">Últimos 90 días</option></select></label></header>
+  return <section className="grid gap-4">
+    <Topbar eyebrow="Mi seguimiento" title="Estadísticas de mis labores" notifTo="/empleado/notificaciones" profileTo="/empleado/perfil" avatar="/coffee-tech/image.png" name="Empleado" role="Equipo de finca" toolbar={<label className="period-select"><span>Periodo</span><select value={period} onChange={(event) => setPeriod(event.target.value)}><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="90">Últimos 90 días</option></select></label>}/>
+    <p className="text-muted">Consulta el trabajo que has registrado en tus lotes asignados y revisa cómo avanza tu jornada.</p>
     <RequestState loading={loading} error={error} onRetry={refresh}/>
     <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"><MetricCard icon="fa-solid fa-list-check" label="Labores realizadas" value={rows.length} hint={`En los últimos ${period} días`}/><MetricCard icon="fa-solid fa-seedling" label="Lotes atendidos" value={uniqueLots} hint="Con actividad registrada"/><MetricCard icon="fa-solid fa-ranking-star" label="Labor más frecuente" value={mostCommon?.[0] ?? "—"} hint={mostCommon ? `${mostCommon[1]} registros` : "Aún no hay registros"}/><MetricCard icon="fa-solid fa-calendar-check" label="Esta semana" value={weekly.at(-1)?.total ?? 0} hint="Labores registradas"/></section>
     <section className="grid gap-4 lg:grid-cols-[1.3fr_1fr]">

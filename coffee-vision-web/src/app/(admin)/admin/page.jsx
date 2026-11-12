@@ -37,6 +37,20 @@ export default function AdminDashboard() {
     <section className="grid gap-6">
       <Topbar eyebrow="Panel administrador" title="Control general de Coffee+Visión" notifTo="/admin/notificaciones" profileTo="/admin/perfil" avatar="/coffee-tech/persona.jpg" name="Administrador" role="Gestión Central" />
 
+      <section className="admin-hero">
+        <article className="admin-hero-copy">
+          <p className="eyebrow !text-gold">CENTRO DE CONTROL</p>
+          <h2>Administra Coffee+Visión desde un solo lugar</h2>
+          <p>Gestiona usuarios, empleados y contenidos, y mantén una visión clara de la actividad de las fincas.</p>
+          <Link href="/admin/usuarios" className="admin-hero-action"><i className="fa-solid fa-users-gear" aria-hidden="true" /> Administrar usuarios</Link>
+        </article>
+        <aside className="admin-hero-stat">
+          <span>Usuarios en la plataforma</span>
+          <strong>{loading ? "…" : data?.usuarios_total ?? data?.usuarios_activos ?? "—"}</strong>
+          <Link href="/admin/empleados">Ver empleados <i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
+        </aside>
+      </section>
+
       {error && <aside role="alert" className="flex items-center justify-between gap-4 rounded-lg border border-[#f5dfac] bg-[#fff8e8] px-4 py-3 text-sm text-warning"><span>{error}</span><button type="button" onClick={refresh} className="font-bold">Reintentar</button></aside>}
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="Indicadores principales">
@@ -54,11 +68,11 @@ export default function AdminDashboard() {
           <ul className="grid gap-3">{alerts.map((alert, index) => <li key={alert.id ?? alert.titulo ?? index} className="flex items-start gap-3 rounded-lg border border-line bg-[#fbfaf7] p-3"><i className={`fa-solid ${alert.icon ?? "fa-circle-exclamation"} mt-1 text-green`} aria-hidden="true"/><span><strong className="block text-coffee">{alert.titulo}</strong><small className="text-muted">{alert.detalle}</small></span></li>)}</ul>
         </Panel>
 
-        <Panel eyebrow="Gestión" title="Acciones rápidas">
+        <Panel eyebrow="Gestión de acceso" title="Usuarios y empleados">
           <section className="grid gap-3">
-            <Link href="/admin/usuarios" className="flex min-h-[46px] items-center justify-center gap-2.5 rounded-lg border border-line bg-[#fbfaf7] font-bold text-coffee hover:border-green hover:text-green"><i className="fa-solid fa-user-plus" aria-hidden="true"/> Crear usuario</Link>
-            <Link href="/admin/metricas" className="flex min-h-[46px] items-center justify-center gap-2.5 rounded-lg border border-line bg-[#fbfaf7] font-bold text-coffee hover:border-green hover:text-green"><i className="fa-solid fa-file-export" aria-hidden="true"/> Exportar reporte</Link>
-            <Link href="/admin/usuarios" className="flex min-h-[46px] items-center justify-center gap-2.5 rounded-lg border border-line bg-[#fbfaf7] font-bold text-coffee hover:border-green hover:text-green"><i className="fa-solid fa-circle-check" aria-hidden="true"/> Validar fincas</Link>
+            <Link href="/admin/usuarios" className="admin-management-link"><span className="grid h-10 w-10 place-items-center rounded-lg bg-green-soft text-green"><i className="fa-solid fa-users" aria-hidden="true" /></span><span><strong>Administrar usuarios</strong><small>Buscar cuentas, asignar roles y desactivar accesos.</small></span><i className="fa-solid fa-arrow-right ml-auto text-green" aria-hidden="true" /></Link>
+            <Link href="/admin/empleados" className="admin-management-link"><span className="grid h-10 w-10 place-items-center rounded-lg bg-[#f5f0e8] text-coffee"><i className="fa-solid fa-user-tie" aria-hidden="true" /></span><span><strong>Administrar empleados</strong><small>Consultar el personal y sus accesos de plataforma.</small></span><i className="fa-solid fa-arrow-right ml-auto text-green" aria-hidden="true" /></Link>
+            <Link href="/admin/metricas" className="admin-management-link"><span className="grid h-10 w-10 place-items-center rounded-lg bg-[#eef2f7] text-[#658098]"><i className="fa-solid fa-chart-column" aria-hidden="true" /></span><span><strong>Ver métricas</strong><small>Consulta la actividad agregada de la plataforma.</small></span><i className="fa-solid fa-arrow-right ml-auto text-green" aria-hidden="true" /></Link>
           </section>
         </Panel>
       </section>

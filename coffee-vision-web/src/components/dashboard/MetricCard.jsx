@@ -1,7 +1,7 @@
 export default function MetricCard({ icon, label, value, hint }) {
   return (
-    <article className="relative grid gap-2 overflow-hidden rounded-lg border border-line bg-white/95 p-5 shadow-panel">
-      <span className="relative z-10 grid h-11 w-11 place-items-center rounded-lg bg-green-soft text-green">
+    <article className="relative grid gap-1.5 overflow-hidden rounded-lg border border-line bg-white/95 p-4 shadow-panel">
+      <span className="relative z-10 grid h-9 w-9 place-items-center rounded-lg bg-green-soft text-green">
         <i className={icon} aria-hidden="true" />
       </span>
       <p className="relative z-10 font-bold text-muted">{label}</p>

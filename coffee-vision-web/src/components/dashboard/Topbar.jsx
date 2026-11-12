@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-export default function Topbar({ eyebrow, title, notifTo, profileTo, avatar, name, role }) {
+export default function Topbar({ eyebrow, title, notifTo, profileTo, avatar, name, role, toolbar }) {
   return (
     <header className="dashboard-topbar flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
       <section>
-        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h1>{title}</h1>
+        {eyebrow && <p className="eyebrow !mb-1">{eyebrow}</p>}
+        <h1 className="m-0">{title}</h1>
       </section>
 
-      <nav className="flex items-center gap-4" aria-label="Perfil y avisos">
+      <nav className="flex flex-wrap items-center gap-3 sm:gap-4" aria-label="Perfil y avisos">
         <Link
           href={notifTo}
           aria-label="Notificaciones"
@@ -28,6 +28,7 @@ export default function Topbar({ eyebrow, title, notifTo, profileTo, avatar, nam
             <small className="text-muted">{role}</small>
           </span>
         </Link>
+        {toolbar}
       </nav>
     </header>
   );

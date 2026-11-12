@@ -41,10 +41,11 @@ export default function GestionPlagasPage() {
   }
 
   return <section className="grid gap-6">
-    <Topbar eyebrow="Plataforma de entrenamiento IA" title="Gestión técnica de patógenos y plagas del café" notifTo="/admin/notificaciones" profileTo="/admin/perfil" avatar="/coffee-tech/persona.jpg" name="Administrador" role="Gestor de Modelo IA"/>
+    <Topbar eyebrow="Entrenamiento del modelo" title="Gestión de plagas e IA" notifTo="/admin/notificaciones" profileTo="/admin/perfil" avatar="/coffee-tech/persona.jpg" name="Administrador" role="Gestión Central"/>
     <div className="flex items-center gap-2 self-start rounded-full bg-green-soft px-4 py-1.5 text-sm font-bold text-green-deep"><span className="h-2 w-2 rounded-full bg-green"/>Servidor IA Activo</div>
-    <section className="grid gap-4 lg:grid-cols-2">
-      <Panel eyebrow="Actualizar base de datos" title="Ingrese muestras para reentrenar la red neuronal">
+    <section className="grid items-start gap-4 lg:grid-cols-2">
+      <Panel eyebrow="ACTUALIZAR BASE DE DATOS" title="Muestras para el entrenamiento">
+        <p className="mb-4 text-sm text-muted">Agrega información e imágenes para mejorar la detección de plagas y enfermedades.</p>
         <form onSubmit={submit} className="grid gap-4">
           <label className="grid gap-1.5 text-sm font-semibold text-coffee">Nombre Técnico / Científico<input value={form.nombre} onChange={(event) => setForm({ ...form, nombre: event.target.value })} name="nombre" required placeholder="Ej: Hemileia vastatrix (Roya)" className="min-h-[44px] rounded-lg border border-line px-3 font-normal focus:border-green focus:outline-none"/></label>
           <label className="grid gap-1.5 text-sm font-semibold text-coffee">Categoría de riesgo<select value={form.categoria} onChange={(event) => setForm({ ...form, categoria: event.target.value })} name="categoria" className="min-h-[44px] rounded-lg border border-line px-3 font-normal focus:border-green focus:outline-none">{categories.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</select></label>
@@ -55,7 +56,8 @@ export default function GestionPlagasPage() {
           <button type="submit" disabled={saving} className="min-h-[44px] rounded-lg bg-green font-bold text-white hover:bg-green-deep disabled:opacity-60">{saving ? "Enviando muestra…" : "Actualizar modelo de IA"}</button>
         </form>
       </Panel>
-      <Panel eyebrow="Historial" title="Registros recientes enviados al pipeline de entrenamiento">
+      <Panel eyebrow="HISTORIAL" title="Entrenamientos recientes">
+        <p className="mb-4 text-sm text-muted">Consulta las muestras enviadas y el estado del análisis.</p>
         <RequestState loading={loading} error={error} onRetry={refresh}/>
         <div className="overflow-x-auto"><table className="w-full border-collapse text-sm"><thead><tr>{["Fecha", "Patógeno", "Tipo", "Estado IA"].map((heading) => <th key={heading} className="border-b border-line px-3 py-2.5 text-left text-[0.82rem] text-coffee">{heading}</th>)}</tr></thead><tbody>{records.length ? records.map((record, index) => <tr key={record.id ?? index}><td className="border-b border-line px-3 py-2.5 text-muted">{record.fecha ?? record.creado_en ?? "—"}</td><td className="border-b border-line px-3 py-2.5 font-semibold text-ink">{record.nombre ?? record.diagnostico ?? record.plaga}</td><td className="border-b border-line px-3 py-2.5"><StatusBadge type={badgeTypes[record.categoria] ?? "ok"}>{(record.categoria ?? "análisis").toUpperCase()}</StatusBadge></td><td className="border-b border-line px-3 py-2.5 text-muted">{record.estado ?? "Recibido"}</td></tr>) : <tr><td colSpan={4} className="py-6 text-center text-muted">Aún no hay registros enviados.</td></tr>}</tbody></table></div>
       </Panel>

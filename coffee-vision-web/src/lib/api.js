@@ -53,7 +53,15 @@ const demoSeeds = {
     { id: 1, nombre: "María Gómez", email: "caficultor@finca.co", rol: "caficultor", estado: "Activo", creado_en: "2026-07-12" },
     { id: 2, nombre: "Juan Pérez", email: "empleado@finca.co", rol: "empleado", estado: "Activo", creado_en: "2026-08-12" },
   ],
-  "/admin/contenidos": [],
+  "/admin/contenidos": [
+    { id: 1, titulo: "Germinación y trasplante", categoria: "Ciclo de vida", estado: "Publicado", actualizado_en: "2026-10-20", contenido: "Pasos para seleccionar semillas, preparar el germinador y trasplantar plántulas sanas al lote." },
+    { id: 2, titulo: "Desarrollo vegetativo", categoria: "Ciclo de vida", estado: "Publicado", actualizado_en: "2026-10-15", contenido: "Recomendaciones de sombra, poda y seguimiento para fortalecer el crecimiento del cafeto." },
+    { id: 3, titulo: "Floración del cafeto", categoria: "Ciclo de vida", estado: "Publicado", actualizado_en: "2026-10-09", contenido: "Cómo reconocer la floración y cuidar el cultivo para favorecer el desarrollo de los frutos." },
+    { id: 4, titulo: "Manejo integrado de la broca", categoria: "Plagas", estado: "Publicado", actualizado_en: "2026-10-05", contenido: "Monitoreo del nivel de infestación, recolección de frutos y prácticas de control integrado." },
+    { id: 5, titulo: "Prevención de la roya", categoria: "Plagas", estado: "Publicado", actualizado_en: "2026-09-28", contenido: "Señales de alerta y prácticas de manejo para reducir el impacto de la roya en el cafetal." },
+    { id: 6, titulo: "Nutrición y cuidado del suelo", categoria: "Nutrición", estado: "Publicado", actualizado_en: "2026-09-20", contenido: "Buenas prácticas para conservar el suelo y planear la fertilización según el análisis del lote." },
+    { id: 7, titulo: "Maduración y cosecha selectiva", categoria: "Cosecha", estado: "Publicado", actualizado_en: "2026-09-12", contenido: "Criterios para recolectar frutos maduros y proteger el rendimiento y la calidad de taza." },
+  ],
   "/admin/plagas-ia": [],
 };
 

@@ -1132,8 +1132,117 @@ to {
 }
 .chart-empty { min-height: 180px; display: grid; place-items: center; margin: 0; color: var(--muted); font-size: 12px; text-align: center; }
 .admin-activity-chart { margin-bottom: 18px; }
+.admin-accounts-page { display: grid; gap: 16px; }
+.admin-accounts-page > .page-heading { margin-bottom: 0; }
+.admin-accounts-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; padding: 14px; }
+.admin-accounts-search { display: flex; min-width: min(100%, 300px); flex: 1 1 360px; align-items: center; gap: 10px; min-height: 42px; padding: 0 12px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); }
+.admin-accounts-search input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; }
+.admin-role-filter { display: grid; min-width: 180px; gap: 4px; color: var(--muted); font-size: 10px; }
+.admin-role-filter select, .admin-account-select { min-height: 38px; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; background: #fff; color: var(--ink); font: inherit; }
+.admin-switch-link { display: inline-flex; min-height: 40px; align-items: center; gap: 8px; color: var(--green-deep); font-size: 12px; font-weight: 700; }
+.admin-account-state { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; font-size: 11px; }
+.admin-account-state i { width: 8px; height: 8px; border-radius: 50%; background: #4c9863; }
+.admin-account-state.is-inactive i { background: #b7791f; }
+.admin-deactivate-button { border: 0; background: transparent; color: #a33e35; font: inherit; font-size: 11px; font-weight: 700; }
+.admin-deactivate-button:hover { text-decoration: underline; }
+.admin-accounts-table { padding: 18px; }
+.admin-accounts-table .data-table td { vertical-align: middle; }
+.admin-accounts-table .data-table th, .admin-accounts-table .data-table td { white-space: nowrap; }
+.admin-management-link { display: flex; min-height: 62px; align-items: center; gap: 11px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #fbfaf7; color: var(--coffee); transition: border-color .2s, background .2s; }
+.admin-management-link:hover { border-color: #b7ccac; background: #f4f8ef; }
+.admin-management-link > span:nth-child(2) { display: grid; gap: 3px; }
+.admin-management-link strong { font-size: 12px; }
+.admin-management-link small { color: var(--muted); font-size: 10px; line-height: 1.4; }
+.admin-metrics-actions { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: flex-end; gap: 12px; }
+.admin-metrics-actions .period-select { min-width: 130px; }
+.admin-content-page { display: grid; gap: 16px; }
+.admin-content-page > .page-heading { margin-bottom: 0; }
+.admin-content-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(300px, .85fr); align-items: start; gap: 16px; }
+.admin-content-list, .admin-content-form-panel { min-width: 0; }
+.admin-content-search { display: flex; align-items: center; gap: 9px; max-width: 370px; min-height: 40px; margin: 0 0 14px; padding: 0 11px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); }
+.admin-content-search input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: 12px; }
+.admin-content-table td { vertical-align: middle; }
+.admin-content-summary { display: block; max-width: 360px; margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.45; white-space: normal; }
+.admin-content-category { display: inline-block; border-radius: 999px; background: #f2f5ed; padding: 5px 9px; color: #4f7055; font-size: 10px; font-weight: 700; }
+.admin-content-published { display: inline-flex; align-items: center; gap: 6px; color: #477b57; font-size: 11px; font-weight: 700; }
+.admin-content-published i { width: 7px; height: 7px; border-radius: 50%; background: #55a56b; }
+.admin-content-delete { border: 0; background: transparent; color: #a33e35; font: inherit; font-size: 11px; font-weight: 700; }
+.admin-content-delete:hover { text-decoration: underline; }
+.admin-content-form-intro { margin: 0 0 16px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.admin-content-form { display: grid; gap: 14px; }
+.admin-content-form label { display: grid; gap: 7px; color: #435147; font-size: 12px; font-weight: 650; }
+.admin-content-form input, .admin-content-form select, .admin-content-form textarea { width: 100%; min-height: 42px; border: 1px solid #dfe5dd; border-radius: 9px; padding: 10px 12px; background: white; color: var(--ink); font: inherit; font-size: 12px; outline: none; }
+.admin-content-form textarea { min-height: 125px; resize: vertical; }
+.admin-content-form .button { justify-self: start; }
+.admin-hero { position: relative; isolation: isolate; display: grid; min-height: 250px; grid-template-columns: minmax(0, 1fr) 220px; align-items: center; gap: 24px; padding: 30px 36px; overflow: hidden; border-radius: 12px; background: radial-gradient(circle at 78% 18%, #f2b84b38, transparent 13rem), radial-gradient(circle at 8% 110%, #769f1a55, transparent 23rem), linear-gradient(118deg, #203b30 0%, #315947 58%, #426b4c 100%); color: white; box-shadow: var(--shadow-panel); }
+.admin-hero::after { position: absolute; z-index: -1; top: -115px; right: 18%; width: 310px; height: 310px; border: 1px solid #ffffff1c; border-radius: 50%; box-shadow: 0 0 0 28px #ffffff08, 0 0 0 68px #ffffff06; content: ""; }
+.admin-hero-copy { max-width: 700px; }
+.admin-hero-copy .eyebrow { margin-bottom: 8px; letter-spacing: .14em; }
+.admin-hero-copy h2 { margin: 0; color: white; font-size: clamp(25px, 3vw, 38px); line-height: 1.12; letter-spacing: -.035em; }
+.admin-hero-copy > p:not(.eyebrow) { max-width: 680px; margin: 12px 0 18px; color: #ffffffe0; font-size: 14px; line-height: 1.6; }
+.admin-hero-action { display: inline-flex; min-height: 44px; align-items: center; gap: 9px; padding: 0 15px; border: 1px solid #ffffff65; border-radius: 9px; background: #ffffff1a; color: white; font-size: 13px; font-weight: 800; transition: background .2s; }
+.admin-hero-action:hover { background: #ffffff30; }
+.admin-hero-stat { display: grid; gap: 8px; padding: 20px; border: 1px solid #ffffff50; border-radius: 12px; background: #ffffff20; backdrop-filter: blur(8px); }
+.admin-hero-stat > span { color: #ffffffdb; font-size: 12px; }
+.admin-hero-stat > strong { color: white; font-size: 48px; line-height: 1; }
+.admin-hero-stat > a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 10px; border-top: 1px solid #ffffff45; color: white; font-size: 11px; font-weight: 700; }
 .recharts-tooltip-cursor { opacity: .45; }
 @keyframes grow { from { transform: scaleY(.15); transform-origin: bottom; } to { transform: scaleY(1); transform-origin: bottom; } }
 @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1050px) { .admin-content-layout { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .admin-hero { min-height: 0; grid-template-columns: 1fr; padding: 24px; } .admin-hero-stat { max-width: 260px; } }
 @media (max-width: 650px) { .stat-grid { grid-template-columns: 1fr; } .dashboard-grid, .admin-overview-grid { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; } .form-grid > .form-error, .form-grid > button { grid-column: auto; } .page-heading { align-items: flex-start; flex-direction: column; } .page-action { width: 100%; } .request-error { align-items: flex-start; flex-direction: column; } .trend-chart { height: 225px; } }
+
+/* Tighter shared spacing across the admin, caficultor and employee modules. */
+.page-heading { margin-bottom: 22px; gap: 14px; }
+.stat-grid { gap: 12px; margin: 14px 0 18px; }
+.stat-card { min-height: 110px; padding: 16px; }
+.surface { padding: 18px; }
+.surface-heading { margin-bottom: 13px; }
+.dashboard-grid, .admin-overview-grid { gap: 14px; }
+.quick-actions { margin-top: 14px; }
+.quick-actions nav { gap: 8px; margin-top: 12px; }
+.bar-chart { gap: 12px; min-height: 190px; margin-top: 16px; }
+.form-card { gap: 14px; padding: 20px; }
+.form-card:not(.invite-form) { max-width: 900px; }
+.invite-page { display: grid; min-height: calc(100vh - 3rem); grid-template-rows: auto 1fr; gap: 18px; }
+.invite-page > .page-heading { margin-bottom: 0; }
+.invite-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .8fr); grid-template-rows: minmax(380px, 1fr); align-content: stretch; align-items: stretch; gap: 18px; }
+.invite-form { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: center; gap: 18px; padding: 28px; }
+.invite-form-heading, .invite-form .invite-validity, .invite-form .form-actions, .invite-form .form-error, .invite-form .invitation-code { grid-column: 1 / -1; }
+.invite-form-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; }
+.invite-help-card { display: grid; align-content: center; gap: 14px; padding: 28px; border-radius: 15px; background: linear-gradient(145deg, #254d3c, #37624a); color: white; box-shadow: var(--shadow-panel); }
+.invite-steps { display: grid; gap: 14px; margin: 4px 0 0; padding: 0; list-style: none; }
+.invite-steps li { display: flex; align-items: flex-start; gap: 12px; }
+.invite-steps li > span { display: grid; width: 28px; height: 28px; flex: 0 0 28px; place-items: center; border: 1px solid #ffffff50; border-radius: 50%; color: #f2b84b; font-size: 12px; font-weight: 800; }
+.invite-steps p, .invite-steps small { display: block; margin: 0; }
+.invite-steps strong { font-size: 13px; }
+.invite-steps small { margin-top: 3px; color: #ffffffb8; font-size: 11px; line-height: 1.45; }
+.invite-expiry-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 4px; padding: 12px; border: 1px solid #ffffff30; border-radius: 10px; background: #ffffff12; color: #f5d994; }
+.invite-expiry-note p { margin: 0; color: #ffffffd1; font-size: 11px; line-height: 1.5; }
+.inline-create { gap: 11px; margin-bottom: 18px; }
+.data-table th { padding: 11px 12px; }
+.data-table td { padding: 12px; }
+/* Tighten only the outer page sections so large dashboards use vertical space better. */
+main > section.grid.gap-6 { row-gap: 1rem; }
+@media (max-width: 650px) {
+  .page-heading { margin-bottom: 16px; }
+  .surface { padding: 15px; }
+  .form-card { padding: 16px; }
+  .invite-page { min-height: 0; }
+  .invite-page > .page-heading { margin-bottom: 0; }
+  .invite-layout { grid-template-columns: 1fr; }
+  .invite-form { grid-template-columns: 1fr; gap: 14px; padding: 18px; }
+  .invite-form-heading, .invite-form .invite-validity, .invite-form .form-actions, .invite-form .form-error, .invite-form .invitation-code { grid-column: auto; }
+  .invite-help-card { gap: 12px; padding: 20px; }
+  .admin-accounts-page { gap: 12px; }
+  .admin-accounts-toolbar { align-items: stretch; }
+  .admin-role-filter { flex: 1 1 100%; }
+  .admin-accounts-table { padding: 12px; }
+  .admin-metrics-actions { justify-content: flex-start; }
+}
+@media (min-width: 651px) and (max-width: 850px) {
+  .invite-layout { grid-template-columns: 1fr; align-content: start; }
+  .invite-page { min-height: 0; }
+}
 

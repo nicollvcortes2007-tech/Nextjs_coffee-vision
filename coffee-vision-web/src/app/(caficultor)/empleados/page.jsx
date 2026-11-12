@@ -31,7 +31,7 @@ export default function EmpleadosPage() {
   const pendingCount = employees.filter((employee) => /pendiente|invit/i.test(employee.estado ?? "")).length;
 
   return (
-    <section className="grid gap-6">
+    <section className="grid gap-4">
       <Topbar
         eyebrow="Equipo de finca"
         title="Mi equipo"
@@ -42,7 +42,7 @@ export default function EmpleadosPage() {
         role="Finca El Paraíso"
       />
 
-      <header className="flex flex-wrap items-end justify-between gap-4">
+      <header className="flex flex-wrap items-center justify-between gap-3">
         <p className="max-w-2xl text-muted">Consulta quiénes trabajan contigo en la finca y mantén sus accesos organizados.</p>
         <Link href="/empleados/nuevo" className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-green px-4 py-2.5 font-extrabold !text-white shadow-sm transition-colors hover:bg-green-deep">
           <i className="fa-solid fa-user-plus" aria-hidden="true" /> Invitar empleado

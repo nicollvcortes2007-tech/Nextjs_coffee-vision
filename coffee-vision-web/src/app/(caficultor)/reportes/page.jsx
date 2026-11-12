@@ -21,9 +21,8 @@ export default function EstadisticasPage() {
   const points = data?.produccion?.length ? data.produccion : [{ periodo: "Ene", kilogramos: 40 }, { periodo: "Mar", kilogramos: 65 }, { periodo: "May", kilogramos: 85 }, { periodo: "Jul", kilogramos: 50 }];
   const lots = data?.lotes?.length ? data.lotes : sampleLots;
 
-  return <section className="grid gap-6">
-    <Topbar eyebrow="Panel de estadísticas" title="Estadísticas de cultivo" notifTo="/notificaciones" profileTo="/perfil" avatar="/coffee-tech/image.png" name="Caficultor" role="Finca El Paraíso" />
-    <label className="period-select justify-self-end">Periodo<select value={period} onChange={(event) => setPeriod(event.target.value)}><option value="7d">7 días</option><option value="30d">30 días</option><option value="90d">90 días</option><option value="1y">12 meses</option></select></label>
+  return <section className="grid gap-4">
+    <Topbar eyebrow="Panel de estadísticas" title="Estadísticas de cultivo" notifTo="/notificaciones" profileTo="/perfil" avatar="/coffee-tech/image.png" name="Caficultor" role="Finca El Paraíso" toolbar={<label className="period-select"><span>Periodo</span><select value={period} onChange={(event) => setPeriod(event.target.value)}><option value="7d">7 días</option><option value="30d">30 días</option><option value="90d">90 días</option><option value="1y">12 meses</option></select></label>} />
     <RequestState loading={loading} error={error} onRetry={refresh} />
     <section className="grid gap-4 sm:grid-cols-3">
       <article className="rounded-lg border border-line bg-white/95 p-5 shadow-panel"><h3 className="text-sm">Total Hectáreas</h3><p className="mt-1 text-2xl font-extrabold text-green-deep">{data?.total_hectareas ?? "24.5 ha"}</p><span className="text-sm text-muted">{data?.hectareas_tendencia ?? "↑ 1.2% este mes"}</span></article>

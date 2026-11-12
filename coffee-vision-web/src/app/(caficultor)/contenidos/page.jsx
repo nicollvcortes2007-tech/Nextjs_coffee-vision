@@ -42,7 +42,7 @@ export default function GuiasPage() {
       <Topbar eyebrow="Aprendizaje" title="Guías" notifTo="/notificaciones" profileTo="/perfil" avatar="/coffee-tech/image.png" name="Caficultor" role="Finca El Paraíso" />
       <p className="text-muted">La ayuda que necesitas ¡Ahora más fácil!</p>
       <nav className="grid gap-3 rounded-lg border border-line bg-white/95 p-4 shadow-panel sm:flex sm:items-center sm:justify-between">
-        <input type="search" placeholder="Buscar..." value={search} onChange={(event) => setSearch(event.target.value)} className="min-h-[42px] rounded-lg border border-line px-3 focus:border-green focus:outline-none sm:w-64" />
+        <input type="search" placeholder="Buscar..." value={search} onChange={(event) => setSearch(event.target.value)} className="min-h-10.5 rounded-lg border border-line px-3 focus:border-green focus:outline-none sm:w-64" />
         <ul className="flex flex-wrap gap-2">{CATEGORIES.map((item) => <li key={item}><button type="button" onClick={() => setCategory(item)} className={`rounded-full px-4 py-1.5 text-sm font-bold ${category === item ? "bg-coffee text-white" : "bg-[#fbfaf7] text-muted"}`}>{item}</button></li>)}</ul>
       </nav>
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

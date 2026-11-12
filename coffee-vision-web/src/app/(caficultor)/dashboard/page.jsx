@@ -72,7 +72,7 @@ export default function DashboardCaficultor() {
       )}
 
       <header
-        className="relative flex min-h-[270px] flex-col justify-center gap-4 overflow-hidden rounded-lg p-8 text-white shadow-hero sm:flex-row sm:items-center sm:justify-between"
+        className="relative flex min-h-67.5 flex-col justify-center gap-4 overflow-hidden rounded-lg p-8 text-white shadow-hero sm:flex-row sm:items-center sm:justify-between"
         style={{
           backgroundImage: "linear-gradient(90deg, rgba(42,26,15,0.9), rgba(78,42,21,0.62)), url('/coffee-tech/Cafe.webp')",
           backgroundSize: "cover",
